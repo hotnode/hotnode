@@ -6,8 +6,6 @@ var config = require(configFile);
 
 var loadTime = (new Date).getTime();
 
-var httpProxy = require('http-proxy');
-
 var http = require('http');
 
 var httpProxy = require('http-proxy');
@@ -36,4 +34,7 @@ var server = http.createServer(function(req, res) {
   });
 });
 
-server.listen(process.env.PORT || 80);
+var ports = config.listen || (process.env.PORT || '80').split(/[,;|\s]+/g);
+ports.forEach(function (port) {
+  server.listen(port);
+});

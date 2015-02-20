@@ -1,5 +1,24 @@
 {
-  "master": "http://localhost:8000",
-  "listen": [80, 443],
-  "ttl": 60
+  "target": "master",
+  "master": "http://localhost:80",
+  "slave": "http://localhost:8000",
+  "redirection": {
+    "enabled": false,
+    "type": "permanent",
+    "appendUrl": true
+  },
+  "protocole": "http",
+  "appendForwardedProto": true,
+  "appendHeaders": {
+    "x-forwarded-by": "hotnode"
+  },
+  "enforce-www": false,
+  "listen": [
+    8010
+  ],
+  "ttl": 60,
+  "ssl": {
+    "key": "/etc/ssl/private/key.pem",
+    "cert": "/etc/ssl/private/certificate.cer"
+  }
 }

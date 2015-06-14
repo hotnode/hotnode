@@ -4,6 +4,9 @@
   "description": "Keep your application always available even during upgrades",
   "author": "kylekatarnls",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "http-proxy": "~1.8.1"
   }

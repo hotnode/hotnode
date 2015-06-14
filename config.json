@@ -2,6 +2,11 @@
   "target": "master",
   "master": "http://localhost:80",
   "slave": "http://localhost:8000",
+  "rescue": {
+    "enabled": true,
+    "alive": "/alive/",
+    "timeout": 120
+  },
   "redirection": {
     "enabled": false,
     "type": "permanent",
@@ -12,11 +17,10 @@
   "appendHeaders": {
     "x-forwarded-by": "hotnode"
   },
-  "enforce-www": false,
+  "enforceWww": false,
   "listen": [
     8010
   ],
-  "ttl": 60,
   "ssl": {
     "key": "/etc/ssl/private/key.pem",
     "cert": "/etc/ssl/private/certificate.cer"

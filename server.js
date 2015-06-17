@@ -10,7 +10,9 @@ process.on('uncaughtException', function (e) {
 
 var fs = require('fs');
 
-var proxy = require('http-proxy').createProxyServer({});
+var proxy = require('http-proxy').createProxyServer({
+  xfwd: config.xForwardHeaders
+});
 
 proxy.on('proxyReq', function(proxyReq, req, res, options) {
   if(config.appendForwardedProto) {

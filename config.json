@@ -24,5 +24,6 @@
   "ssl": {
     "key": "/etc/ssl/private/key.pem",
     "cert": "/etc/ssl/private/certificate.cer"
-  }
+  },
+  "xForwardHeaders": true
 }
